@@ -1,10 +1,9 @@
 package rentacar.com.rentACar.DataAccess.Abstracts;
 
-import java.util.List;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import rentacar.com.rentACar.Entities.Concretes.Brand;
 
-public interface IBrandRepository {
+public interface IBrandRepository extends JpaRepository<Brand,Integer> {
 
-	List<Brand> GetAll();
 }

@@ -1,42 +1,29 @@
 package rentacar.com.rentACar.Entities.Concretes;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import jakarta.persistence.Id;
+
+//ctl + shift + o --> kullanılmayan kütüphaneleri siler
+
+@Table(name="Brands")
+@Data  //@Getter + @Setter birleşimi
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity 		//veri tabanı varlığısın demek.
 public class Brand {
-
+	
+	@Id
+	@GeneratedValue(strategy= GenerationType.IDENTITY) 		//--> Identity Spesification (Id nin 1 1 artması)
+	@Column(name="Id")
 	private int Id;
-	private String Name;
 	
-	
-	public Brand() {
-		super();
-	}
-
-
-	public Brand(int id, String name) {
-		super();
-		Id = id;
-		Name = name;
-	}
-
-
-	public int getId() {
-		return Id;
-	}
-
-
-	public void setId(int id) {
-		Id = id;
-	}
-
-
-	public String getName() {
-		return Name;
-	}
-
-
-	public void setName(String name) {
-		Name = name;
-	}
-	
-	
-	
+	@Column(name="Name")
+	private String Name;	
 }
